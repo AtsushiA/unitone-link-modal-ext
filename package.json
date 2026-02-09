@@ -4,7 +4,8 @@
 	"description": "unitone テーマのメディアリンク機能を拡張し、リンク先をモーダルで表示",
 	"scripts": {
 		"build": "wp-scripts build",
-		"start": "wp-scripts start"
+		"start": "wp-scripts start",
+		"plugin-zip": "npm run build && cd .. && rm -f unitone-link-modal-ext-*.zip && zip -r unitone-link-modal-ext-$(node -p \"require('./unitone-link-modal-ext/package.json').version\").zip unitone-link-modal-ext -x '*.git*' -x '*node_modules*' -x '*src*' -x '*.DS_Store' -x 'unitone-link-modal-ext/package.json' -x 'unitone-link-modal-ext/package-lock.json'"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^27.0.0"
